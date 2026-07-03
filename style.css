@@ -1,0 +1,135 @@
+/* css/style.css */
+
+/* Core Application Standard Variable Assignments */
+:root, [data-bs-theme="light"] {
+    --bg-login-dark: #0f172a;
+    --bg-light-dynamic: #f8fafc;
+    --bg-main-dynamic: #f1f5f9;
+    --bg-card-dynamic: #ffffff;
+    --text-primary-dynamic: #0f172a;
+    --text-secondary-dynamic: #334155;
+    --border-dynamic: #e2e8f0;
+}
+
+[data-bs-theme="dark"] {
+    --bg-light-dynamic: #0f172a;
+    --bg-main-dynamic: #020617;
+    --bg-card-dynamic: #1e293b;
+    --text-primary-dynamic: #f8fafc;
+    --text-secondary-dynamic: #94a3b8;
+    --border-dynamic: #334155;
+}
+
+/* Global Functional Utility Layer Style Layout Adjustments */
+body {
+    transition: background-color 0.25s ease, color 0.25s ease;
+}
+.bg-light-dynamic { background-color: var(--bg-light-dynamic) !important; }
+.bg-main-dynamic { background-color: var(--bg-main-dynamic) !important; }
+.bg-card-dynamic { background-color: var(--bg-card-dynamic) !important; color: var(--text-primary-dynamic) !important; }
+.text-secondary-dynamic { color: var(--text-secondary-dynamic) !important; }
+
+.bg-slate-900 { background-color: #0f172a !important; }
+.bg-slate-950 { background-color: #020617 !important; }
+.border-slate-800 { border-color: #1e293b !important; }
+.border-slate-700 { border-color: #334155 !important; }
+
+.btn-slate {
+    background-color: #0f172a !important;
+    border-color: #1e293b !important;
+    color: #ffffff !important;
+    transition: all 0.2s ease;
+}
+.btn-slate:hover {
+    background-color: #1e293b !important;
+    color: #f8fafc !important;
+}
+
+/* Framework Component Navigation Structure Metrics Overrides */
+.sidebar-panel {
+    width: 100%;
+}
+@media (min-width: 768px) {
+    .sidebar-panel { width: 240px; min-height: 100vh; position: sticky; top: 0; }
+}
+
+.nav-link-custom {
+    color: #94a3b8 !important;
+    font-weight: 700;
+    border-radius: 6px;
+    padding: 10px 12px !important;
+    transition: all 0.15s ease;
+}
+.nav-link-custom:hover {
+    background-color: #1e293b !important;
+    color: #ffffff !important;
+}
+.nav-link-custom.active {
+    background-color: #3b82f6 !important;
+    color: #ffffff !important;
+}
+
+/* Form Structural Layout Layer Metrics Rules overrides */
+.form-control, .form-select {
+    background-color: var(--bg-main-dynamic) !important;
+    border: 1px solid var(--border-dynamic) !important;
+    color: var(--text-primary-dynamic) !important;
+}
+.form-control:focus, .form-select:focus {
+    border-color: #3b82f6 !important;
+    box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.15) !important;
+}
+
+/* Custom Telemetry Color Palettes Configuration */
+.text-amber { color: #f59e0b !important; }
+.text-emerald-600 { color: #059669 !important; }
+.text-rose-600 { color: #e11d48 !important; }
+.bg-danger { background-color: #ef4444 !important; }
+
+/* Interactive Table Hover Layout and Micro-interactions Animation Elements */
+.table-slate {
+    background-color: #1e293b !important;
+    color: #ffffff !important;
+}
+.table-layout-fixed { table-layout: fixed; }
+.cursor-pointer { cursor: pointer; }
+.space-y-2 > * + * { margin-top: 0.5rem !important; }
+.space-y-3 > * + * { margin-top: 1rem !important; }
+.space-y-4 > * + * { margin-top: 1.5rem !important; }
+.w-full { width: 100% !important; }
+.uppercase { text-transform: uppercase !important; }
+.tracking-wide { tracking-spacing: 0.05em !important; font-letter-spacing: 0.05em !important; letter-spacing: 0.05em !important; }
+.tracking-tight { letter-spacing: -0.025em !important; }
+.fw-black { font-weight: 950 !important; }
+.italic { font-style: italic !important; }
+.text-[10px] { font-size: 10px !important; }
+.text-[11px] { font-size: 11px !important; }
+.text-xs { font-size: 12px !important; }
+.text-sm { font-size: 14px !important; }
+
+/* System Framework Overlay Spinning Loader Backdrop Rules Configuration */
+.spinner-overlay {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(15, 23, 42, 0.9);
+    z-index: 2000;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.animate-fade-in {
+    animation: fadeInAnimation 0.25s forwards ease-out;
+}
+@keyframes fadeInAnimation {
+    from { opacity: 0; transform: translateY(4px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.bounce-icon {
+    animation: bounceAnimation 2s infinite ease-in-out;
+}
+@keyframes bounceAnimation {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-4px); }
+}
+
+.border-dashed { border-style: dashed !important; }
